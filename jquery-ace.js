@@ -1,8 +1,10 @@
-(function() {
-  var __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+(function($) {
 
-  window.jQueryAce = {
+  var jQueryAce = function() {};
+  var __hasProp = {}.hasOwnProperty,
+      __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  var jQueryAce = {
     initialize: function(element, options) {
       var klass;
       klass = (function() {
@@ -173,11 +175,11 @@
 
   })();
 
-  (function($) {
-    $.ace = function(element, options) {
+  $.ace = function(element, options) {
       return $(element).ace(options);
     };
     return $.fn.ace = function(options) {
+      jqa = new jQueryAce
       return this.each(function() {
         var editor;
         editor = $(this).data('ace');
@@ -190,6 +192,4 @@
         }
       });
     };
-  })(jQuery);
-
-}).call(this);
+})(jQuery);
